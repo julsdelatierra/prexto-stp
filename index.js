@@ -10,7 +10,7 @@ const server=Hapi.server({
 
 // Add the route
 server.route({
-    method:'GET',
+    method:'POST',
     path:'/stp/state/change',
     handler: function(request, h) {
         const params = request.payload
