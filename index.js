@@ -1,30 +1,23 @@
-'use strict';
+'use strict'
 
-const Hapi=require('hapi');
+const Hapi=require('hapi')
 
 // Create a server with a host and port
 const server=Hapi.server({
     host: 'localhost',
     port: 9009
-});
+})
 
 // Add the route
 server.route({
     method:'POST',
     path:'/stp/state/change',
     handler: function(request, h) {
-        const params = request.payload
-
         return {
-            ok: true,
-            data: {
-                id: '58fd1259',
-                estado: params.estado, // Éxito o Devolución
-                detalle: ''
-            }
-        };
+            ok: true
+        }
     }
-});
+})
 
 server.route({
   method:'GET',
@@ -40,22 +33,22 @@ server.route({
       'promo_code': 'ubert4544ue',
       'rating': 5,
       'activation_status': 'active'
-    };
+    }
   }
-});
+})
 
 // Start the server
 const start =  async function() {
 
     try {
-        await server.start();
+        await server.start()
     }
     catch (err) {
-        console.log(err);
-        process.exit(1);
+        console.log(err)
+        process.exit(1)
     }
 
-    console.log('Server running at:', server.info.uri);
-};
+    console.log('Server running at:', server.info.uri)
+}
 
-start();
+start()
