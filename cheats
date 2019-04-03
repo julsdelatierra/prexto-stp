@@ -1,0 +1,5 @@
+forever start index.js -l logs/debug -e logs/error -o logs/output
+
+curl -X POST -d '{"estado": "Éxito"}' http://localhost:9009/stp/state/change
+
+curl -X POST -d '{"estado": "Éxito"}' http://34.73.207.151:80/stp/state/change

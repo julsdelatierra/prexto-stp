@@ -5,7 +5,7 @@ const Hapi=require('hapi')
 // Create a server with a host and port
 const server=Hapi.server({
     host: 'localhost',
-    port: 9009
+    port: 8000
 })
 
 // Add the route
@@ -16,6 +16,17 @@ server.route({
         return {
             ok: true
         }
+    }
+})
+
+server.route({
+    method:'POST',
+    path:'/spei/webservices/SpeiActualizaServices',
+    handler: function(request, h) {
+      console.log(request.payload)
+      return {
+          ok: true
+      }
     }
 })
 

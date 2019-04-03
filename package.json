@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "hapi": "^18.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
